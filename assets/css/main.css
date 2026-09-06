@@ -1,0 +1,161 @@
+/* ══════════════ NexShop Main Styles ══════════════ */
+:root {
+  --nx-accent: #C8F169;
+  --nx-bg: #0A0A0B;
+  --nx-card: rgba(255,255,255,.04);
+  --nx-border: rgba(255,255,255,.09);
+  --nx-text: #EDEDEF;
+  --nx-muted: #A1A1AA;
+  --nx-radius: 18px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--nx-bg); color: var(--nx-text);
+  font-family: 'Vazirmatn', Tahoma, sans-serif; line-height: 1.8;
+}
+.nx-container { max-width: 1200px; margin-inline: auto; padding-inline: 24px; }
+.nx-accent { color: var(--nx-accent); }
+.screen-reader-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+a { color: var(--nx-text); text-decoration: none; transition: color .25s; }
+a:hover { color: var(--nx-accent); }
+img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
+
+/* ── هدر ── */
+.nx-header {
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(16px); background: rgba(10,10,11,.75);
+  border-bottom: 1px solid var(--nx-border);
+  transition: box-shadow .3s;
+}
+.nx-header.is-scrolled { box-shadow: 0 8px 30px rgba(0,0,0,.45); }
+.nx-header__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 20px; }
+.nx-logo-text { font-weight: 900; font-size: 1.35rem; }
+.nx-menu { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: .95rem; color: var(--nx-muted); }
+.nx-header__actions { display: flex; align-items: center; gap: 10px; }
+.nx-icon-btn {
+  position: relative; background: var(--nx-card); border: 1px solid var(--nx-border);
+  border-radius: 12px; padding: 8px 12px; cursor: pointer; color: var(--nx-text); font-size: 1rem;
+}
+.nx-cart-count {
+  position: absolute; top: -6px; left: -6px; background: var(--nx-accent); color: #000;
+  font-size: .7rem; font-weight: 800; border-radius: 999px; padding: 1px 7px;
+}
+.nx-burger { display: none; }
+
+/* ── هیرو ── */
+.nx-hero { padding: 110px 0 80px; position: relative; overflow: hidden; }
+.nx-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 56px 56px; pointer-events: none;
+}
+.nx-hero__inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; position: relative; }
+.nx-chip {
+  display: inline-block; padding: 5px 16px; border: 1px solid var(--nx-border);
+  border-radius: 999px; font-size: .8rem; color: var(--nx-muted); margin-bottom: 22px;
+}
+.nx-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.25; margin: 0 0 18px; }
+.nx-hero p { color: var(--nx-muted); font-size: 1.15rem; max-width: 480px; }
+.nx-hero__cta { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+.nx-hero__placeholder {
+  aspect-ratio: 4/3; display: grid; place-items: center; font-size: 6rem;
+  background: var(--nx-card); border: 1px solid var(--nx-border); border-radius: var(--nx-radius);
+}
+
+/* ── دکمه‌ها ── */
+.nx-btn {
+  display: inline-block; padding: 14px 30px; border-radius: 999px; font-weight: 700;
+  transition: transform .25s, opacity .25s, border-color .25s; border: none; cursor: pointer; font-family: inherit;
+}
+.nx-btn--primary { background: var(--nx-accent); color: #0A0A0B; }
+.nx-btn--primary:hover { transform: translateY(-3px) scale(1.02); color: #0A0A0B; }
+.nx-btn--ghost { border: 1px solid var(--nx-border); color: var(--nx-text); }
+.nx-btn--ghost:hover { border-color: var(--nx-accent); }
+
+/* ── سکشن‌ها و کارت‌ها ── */
+.nx-section { padding: 80px 24px; }
+.nx-section__title { font-size: 2.2rem; font-weight: 900; margin-bottom: 40px; }
+.nx-section__title span { color: var(--nx-accent); }
+.nx-card {
+  background: var(--nx-card); border: 1px solid var(--nx-border); border-radius: var(--nx-radius);
+  overflow: hidden; transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s;
+}
+.nx-card:hover { transform: translateY(-6px); border-color: var(--nx-accent); }
+.nx-card__body { padding: 22px; }
+.nx-card__title { font-size: 1.1rem; margin: 0; }
+.nx-card__excerpt { color: var(--nx-muted); font-size: .9rem; }
+.nx-grid-posts { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; padding-block: 60px; }
+
+/* ── مزیت‌ها ── */
+.nx-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.nx-feature { padding: 30px; text-align: center; }
+.nx-feature__icon { font-size: 2.2rem; margin-bottom: 14px; }
+.nx-feature h3 { margin: 0 0 6px; }
+.nx-feature p { color: var(--nx-muted); font-size: .9rem; margin: 0; }
+
+/* ── ووکامرس ── */
+.nx-wc { padding-block: 60px; }
+.woocommerce ul.products li.product {
+  background: var(--nx-card); border: 1px solid var(--nx-border); border-radius: var(--nx-radius);
+  padding: 14px; transition: transform .3s, border-color .3s;
+}
+.woocommerce ul.products li.product:hover { transform: translateY(-5px); border-color: var(--nx-accent); }
+.woocommerce ul.products li.product .button,
+.woocommerce a.button, .woocommerce button.button, #place_order {
+  background: var(--nx-accent) !important; color: #0A0A0B !important; border-radius: 999px !important;
+  font-weight: 700 !important;
+}
+.woocommerce span.onsale { background: #ff5470; border-radius: 999px; }
+.woocommerce div.product .price, .woocommerce ul.products li.product .price { color: var(--nx-accent); font-weight: 800; }
+
+/* ── صفحه تکی / جستجو ── */
+.nx-single { padding-block: 60px; max-width: 860px; }
+.nx-single__title { font-size: 2.2rem; font-weight: 900; }
+.nx-single__img { margin-bottom: 24px; }
+.nx-single__content { color: #D4D4D8; }
+.nx-search { display: flex; gap: 10px; margin: 20px 0; }
+.nx-search input {
+  flex: 1; background: var(--nx-card); border: 1px solid var(--nx-border);
+  border-radius: 999px; padding: 12px 22px; color: var(--nx-text); font-family: inherit;
+}
+.nx-search input:focus { border-color: var(--nx-accent); outline: none; }
+.nx-pagination { display: flex; gap: 8px; justify-content: center; padding-bottom: 60px; }
+
+/* ── فوتر ── */
+.nx-footer { border-top: 1px solid var(--nx-border); margin-top: 60px; padding: 60px 0 0; }
+.nx-footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; padding-bottom: 40px; }
+.nx-footer__brand { font-weight: 900; font-size: 1.3rem; }
+.nx-footer__desc, .nx-footer__pay, .nx-footer__contact { color: var(--nx-muted); font-size: .9rem; }
+.nx-footer__trust { color: var(--nx-accent); font-size: .85rem; }
+.nx-footer h4 { margin: 0 0 14px; }
+.nx-footer-menu { list-style: none; padding: 0; margin: 0; }
+.nx-footer-menu li { margin-bottom: 8px; }
+.nx-footer__copy { text-align: center; color: #52525B; font-size: .8rem; padding: 20px; border-top: 1px solid var(--nx-border); }
+
+/* ── دکمه بازگشت به بالا ── */
+.nx-totop {
+  position: fixed; bottom: 26px; left: 26px; z-index: 90;
+  width: 46px; height: 46px; border-radius: 14px; border: 1px solid var(--nx-border);
+  background: var(--nx-card); color: var(--nx-text); cursor: pointer; font-size: 1.2rem;
+  opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s;
+}
+.nx-totop.is-visible { opacity: 1; pointer-events: auto; }
+.nx-totop:hover { transform: translateY(-4px); border-color: var(--nx-accent); }
+
+/* ── انیمیشن ورود ── */
+.nx-reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+.nx-reveal.nx-on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .nx-reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ── ریسپانسیو ── */
+@media (max-width: 860px) {
+  .nx-hero__inner { grid-template-columns: 1fr; gap: 36px; }
+  .nx-nav {
+    display: none; position: absolute; top: 68px; right: 0; left: 0;
+    background: #0F0F11; border-bottom: 1px solid var(--nx-border); padding: 20px 24px;
+  }
+  .nx-nav.is-open { display: block; }
+  .nx-menu { flex-direction: column; gap: 16px; }
+  .nx-burger { display: block; }
+}
