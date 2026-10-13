@@ -1,4 +1,13 @@
 /* ══════════════ NexShop Main Styles ══════════════ */
+/* فونت وزیرمتن (متغیر) — خودمیزبان، مجوز OFL (assets/fonts/OFL.txt) */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --nx-accent: #C8F169;
   --nx-bg: #0A0A0B;
@@ -23,9 +32,12 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 /* ── هدر ── */
 .nx-header {
   position: sticky; top: 0; z-index: 100;
-  backdrop-filter: blur(16px); background: rgba(10,10,11,.75);
+  background: rgba(10,10,11,.96);
   border-bottom: 1px solid var(--nx-border);
   transition: box-shadow .3s;
+}
+@media (min-width: 861px) {
+  .nx-header { backdrop-filter: blur(16px); background: rgba(10,10,11,.75); }
 }
 .nx-header.is-scrolled { box-shadow: 0 8px 30px rgba(0,0,0,.45); }
 .nx-header__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 20px; }
@@ -144,9 +156,9 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 .nx-totop:hover { transform: translateY(-4px); border-color: var(--nx-accent); }
 
 /* ── انیمیشن ورود ── */
-.nx-reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
-.nx-reveal.nx-on { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .nx-reveal { opacity: 1; transform: none; transition: none; } }
+.nx-js .nx-reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+.nx-js .nx-reveal.nx-on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .nx-js .nx-reveal { opacity: 1; transform: none; transition: none; } }
 
 /* ── ریسپانسیو ── */
 @media (max-width: 860px) {
@@ -159,3 +171,14 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
   .nx-menu { flex-direction: column; gap: 16px; }
   .nx-burger { display: block; }
 }
+
+/* ── سازگاری با المنتور ── */
+body.nx-elementor .nx-main,
+.nx-elementor-page { padding: 0; max-width: none; width: 100%; }
+.nx-elementor-page img { border-radius: 0; }
+.elementor img { border-radius: 0; }
+.elementor a { transition: color .25s; }
+.elementor-location-header .nx-header,
+.elementor-location-footer .nx-footer { display: none; }
+body.elementor-default .nx-main,
+body.elementor-page .nx-main { overflow-x: clip; }
