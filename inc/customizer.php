@@ -48,8 +48,4 @@ add_action( 'customize_register', function ( WP_Customize_Manager $c ) {
 	] ) );
 } );
 
-// تزریق رنگ اکسنت انتخاب‌شده به صورت CSS variable
-add_action( 'wp_head', function () {
-	$accent = get_theme_mod( 'nexshop_accent', '#C8F169' );
-	echo '<style>:root{--nx-accent:' . esc_attr( $accent ) . '}</style>';
-}, 20 );
+// نکته: رنگ اکسنت انتخاب‌شده در functions.php با wp_add_inline_style به‌صورت CSS variable تزریق می‌شود.

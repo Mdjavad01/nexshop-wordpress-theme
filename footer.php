@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 ?>
 </main>
 
+<?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) : ?>
 <footer class="nx-footer">
 	<div class="nx-container nx-footer__grid">
 		<div>
@@ -30,6 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	</div>
 	<div class="nx-footer__copy">© <?php echo esc_html( date_i18n( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?> — <?php esc_html_e( 'همه حقوق محفوظ است.', 'nexshop' ); ?></div>
 </footer>
+<?php endif; ?>
 
 <button id="nxToTop" class="nx-totop" aria-label="<?php esc_attr_e( 'بازگشت به بالا', 'nexshop' ); ?>">↑</button>
 <?php wp_footer(); ?>

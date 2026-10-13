@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <?php wp_body_open(); ?>
 <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'رفتن به محتوا', 'nexshop' ); ?></a>
 
+<?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) : ?>
 <header class="nx-header" id="nxHeader">
 	<div class="nx-container nx-header__inner">
 		<div class="nx-header__logo">
@@ -38,9 +39,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 					🛒 <span class="nx-cart-count"><?php echo esc_html( WC()->cart ? WC()->cart->get_cart_contents_count() : 0 ); ?></span>
 				</a>
 			<?php endif; ?>
-			<button class="nx-icon-btn nx-burger" id="nxBurger" aria-label="<?php esc_attr_e( 'منو', 'nexshop' ); ?>">☰</button>
+			<button class="nx-icon-btn nx-burger" id="nxBurger" aria-label="<?php esc_attr_e( 'منو', 'nexshop' ); ?>" aria-controls="nxNav" aria-expanded="false">☰</button>
 		</div>
 	</div>
 </header>
+<?php endif; ?>
 
 <main id="main" class="nx-main">
