@@ -1,3 +1,11 @@
+# فایل‌های بسته‌بندی که نباید کامیت شوند
+*.zip
+!nexshop-child/**/.gitkeep
 .DS_Store
-node_modules/
+Thumbs.db
+
+# فایل‌های محلی
 *.log
+node_modules/
+.vscode/
+.idea/

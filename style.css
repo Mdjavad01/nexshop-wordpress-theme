@@ -1,10 +1,10 @@
 /*
 Theme Name: NexShop — نکس‌شاپ
-Theme URI: https://github.com/HELBOYCODER/nexshop-wordpress-theme
+Theme URI: https://github.com/Mdjavad01/nexshop-wordpress-theme
 Author: NexTech
 Author URI: https://x.com/hellboy_code
-Description: قالب فروشگاهی حرفه‌ای و مینیمال وردپرس/ووکامرس — راست‌چین، سریع، با انیمیشن‌های نرم، پنل تنظیمات کامل، آماده اتصال به درگاه‌های پرداخت ایرانی و خارجی، سازگار با ابزارهای سئو و پلتفرم‌های هوش مصنوعی و MCP.
-Version: 1.1.0
+Description: قالب فروشگاهی حرفه‌ای و مینیمال وردپرس/ووکامرس — فول المنتور (Theme Builder + ویجت‌های اختصاصی)، دارک‌مود و لایت‌مود، چایلد تم، راست‌چین، سریع، با انیمیشن‌های نرم، پنل تنظیمات کامل، آماده اتصال به درگاه‌های پرداخت ایرانی و خارجی، سازگار با ابزارهای سئو و پلتفرم‌های هوش مصنوعی و MCP.
+Version: 2.0.0
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.0
@@ -12,5 +12,38 @@ License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: nexshop
 Domain Path: /languages
-Tags: e-commerce, woocommerce, rtl-language-support, custom-logo, custom-colors, block-styles, wide-blocks, accessibility-ready
+Tags: e-commerce, woocommerce, rtl-language-support, custom-logo, custom-colors, custom-menu, block-styles, wide-blocks, full-width-template, accessibility-ready
 */
+
+/*
+ * استایل اصلی قالب در assets/css/main.css بارگذاری می‌شود.
+ * این فایل (style.css) به‌صورت عمدی با هندل `nexshop-style` انکو می‌شود
+ * تا در چایلد تم (nexshop-child) با همین هندل به‌راحتی جایگزین و سفارشی شود.
+ * یک سری ریزتنظیمات پایه هم برای دارک/لایت اینجا نگه داشته می‌شود.
+ */
+
+/* اسکرول‌بار ملایم در دارک/لایت */
+.nx-js ::-webkit-scrollbar { width: 10px; height: 10px; }
+.nx-js ::-webkit-scrollbar-track { background: transparent; }
+.nx-js ::-webkit-scrollbar-thumb {
+  background: var(--nx-faint);
+  border-radius: 999px;
+  border: 2px solid var(--nx-bg);
+}
+.nx-js ::-webkit-scrollbar-thumb:hover { background: var(--nx-muted); }
+
+/* حالت فوکوس واضح برای دسترس‌پذیری (کیبورد) */
+.nx-js :focus-visible {
+  outline: 2px solid var(--nx-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* انتقال نرم رنگ‌ها هنگام تعویض دارک/لایت (فقط لحظهٔ سوییچ، با کلاس موقت) */
+html.nx-theme-switched body,
+html.nx-theme-switched .nx-header,
+html.nx-theme-switched .nx-footer,
+html.nx-theme-switched .nx-card,
+html.nx-theme-switched .nx-icon-btn {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+}

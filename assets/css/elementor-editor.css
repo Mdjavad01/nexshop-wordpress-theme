@@ -1,0 +1,21 @@
+/* ═══════ NexShop — استایل ادیتور المنتور ═══════
+   فقط برای پیش‌نمایش ویرایشگر المنتور بارگذاری می‌شود. */
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.elementor-editor-active .elementor-inner,
+.elementor-editor-active body {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+/* برچسب ویجت‌های نکس‌شاپ در پنل ادیتور */
+.elementor-widget-nexshop_products .elementor-widget-container,
+.elementor-widget-nexshop_categories .elementor-widget-container {
+  min-height: 40px;
+}

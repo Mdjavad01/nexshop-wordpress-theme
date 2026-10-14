@@ -1,0 +1,506 @@
+# Copyright (C) 2025 NexTech
+# This file is distributed under the GNU General Public License v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: NexShop 2.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/Mdjavad01/nexshop-wordpress-theme/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-01T00:00:00+00:00\n"
+"X-Generator: NexShop build\n"
+"X-Domain: nexshop\n"
+
+#. Theme Name of the theme
+msgid "NexShop — نکس‌شاپ"
+msgstr ""
+
+#: header.php
+msgid "رفتن به محتوا"
+msgstr ""
+
+#: header.php
+msgid "منوی اصلی"
+msgstr ""
+
+#: header.php inc/customizer.php
+msgid "حساب کاربری"
+msgstr ""
+
+#: header.php
+msgid "سبد خرید"
+msgstr ""
+
+#: header.php
+msgid "تغییر حالت روشن/تیره"
+msgstr ""
+
+#: header.php
+msgid "تغییر به حالت تیره"
+msgstr ""
+
+#: header.php
+msgid "تغییر به حالت روشن"
+msgstr ""
+
+#: header.php
+msgid "منو"
+msgstr ""
+
+#: footer.php
+msgid "دسترسی سریع"
+msgstr ""
+
+#: footer.php
+msgid "پرداخت امن"
+msgstr ""
+
+#: footer.php
+msgid "تماس"
+msgstr ""
+
+#: footer.php
+msgid "همه حقوق محفوظ است."
+msgstr ""
+
+#: footer.php
+msgid "بازگشت به بالا"
+msgstr ""
+
+#: front-page.php
+msgid "مشاهده محصولات ←"
+msgstr ""
+
+#: front-page.php
+msgid "چرا ما؟"
+msgstr ""
+
+#: front-page.php
+msgid "پرفروش‌ترین‌ها"
+msgstr ""
+
+#: front-page.php
+msgid "تازه‌رسیده‌ها"
+msgstr ""
+
+#: front-page.php
+msgid "دسته‌بندی‌ها"
+msgstr ""
+
+#: front-page.php
+msgid "ارسال سریع"
+msgstr ""
+
+#: front-page.php
+msgid "به سراسر ایران و جهان"
+msgstr ""
+
+#: front-page.php
+msgid "پرداخت امن"
+msgstr ""
+
+#: front-page.php
+msgid "درگاه‌های ایرانی و بین‌المللی"
+msgstr ""
+
+#: front-page.php
+msgid "ضمانت بازگشت"
+msgstr ""
+
+#: front-page.php
+msgid "۷ روز مهلت بازگشت کالا"
+msgstr ""
+
+#: front-page.php
+msgid "پشتیبانی ۲۴/۷"
+msgstr ""
+
+#: front-page.php
+msgid "پاسخ‌گویی با AI و انسان"
+msgstr ""
+
+#: searchform.php
+msgid "جستجو در فروشگاه…"
+msgstr ""
+
+#: searchform.php
+msgid "جستجو"
+msgstr ""
+
+#: index.php
+msgid "نتایج جستجو برای: %s"
+msgstr ""
+
+#: index.php archive.php
+msgid "چیزی پیدا نشد."
+msgstr ""
+
+#: archive.php
+msgid "بازگشت به فروشگاه"
+msgstr ""
+
+#: 404.php
+msgid "۴۰۴ — صفحه پیدا نشد"
+msgstr ""
+
+#: 404.php
+msgid "صفحه‌ای که دنبالشی اینجا نیست. از جستجو استفاده کن:"
+msgstr ""
+
+#: functions.php
+msgid "منوی فوتر"
+msgstr ""
+
+#: inc/customizer.php
+msgid "⚙️ تنظیمات نکس‌شاپ"
+msgstr ""
+
+#: inc/customizer.php
+msgid "بخش هیرو"
+msgstr ""
+
+#: inc/customizer.php
+msgid "برچسب کوچک بالای تیتر"
+msgstr ""
+
+#: inc/customizer.php
+msgid "تیتر اصلی"
+msgstr ""
+
+#: inc/customizer.php
+msgid "زیرتیتر"
+msgstr ""
+
+#: inc/customizer.php
+msgid "تصویر هیرو (از کتابخانه رسانه)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "روش پیشنهادی — به‌صورت خودکار اندازه‌های ریسپانسیو (srcset) ساخته می‌شود."
+msgstr ""
+
+#: inc/customizer.php
+msgid "تصویر هیرو (روش قدیمی — URL)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "اگر تصویر بالا از کتابخانه رسانه انتخاب شده باشد، این فیلد نادیده گرفته می‌شود."
+msgstr ""
+
+#: inc/customizer.php
+msgid "فوتر و اعتماد"
+msgstr ""
+
+#: inc/customizer.php
+msgid "متن نماد اعتماد"
+msgstr ""
+
+#: inc/customizer.php
+msgid "نام درگاه‌های پرداخت"
+msgstr ""
+
+#: inc/customizer.php
+msgid "اطلاعات تماس"
+msgstr ""
+
+#: inc/customizer.php
+msgid "رنگ‌بندی و حالت نمایش"
+msgstr ""
+
+#: inc/customizer.php
+msgid "حالت رنگی پیش‌فرض"
+msgstr ""
+
+#: inc/customizer.php
+msgid "«خودکار» = تشخیص از تنظیمات سیستم کاربر. کاربران همیشه با دکمهٔ هدر می‌توانند تغییر دهند و انتخابشان ذخیره می‌شود."
+msgstr ""
+
+#: inc/customizer.php
+msgid "خودکار (سیستم کاربر)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "تیره (دارک‌مود)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "روشن (لایت‌مود)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "رنگ اکسنت (دکمه‌ها و لینک‌ها)"
+msgstr ""
+
+#: inc/elementor.php
+msgid "قالب نکس‌شاپ — آمادهٔ کار با المنتور"
+msgstr ""
+
+#: inc/elementor.php
+msgid "برای استفاده از تمام قابلیت‌ها (صفحه‌ساز، Theme Builder و ویجت‌های اختصاصی نکس‌شاپ) افزونهٔ المنتور را نصب کنید."
+msgstr ""
+
+#: inc/elementor.php
+msgid "نصب المنتور"
+msgstr ""
+
+#: inc/elementor.php
+msgid "دیگر نشان نده"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "نکس‌شاپ"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "پنل نکس‌شاپ — اتصالات و هوش مصنوعی"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "پلتفرم‌های هوش مصنوعی (OpenAI / Claude / هر endpoint سازگار)"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "آدرس API"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "کلید API"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "حذف کامل کلید ذخیره‌شده"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "کلید در صفحه نمایش داده نمی‌شود. برای افزونه‌ها و اسکریپت‌های سفارشی از تابع nexshop_get_ai_config() قابل‌دسترسی است."
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "آدرس وب‌هوک / MCP"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "فقط https. با هر سفارش جدید یک درخواست امضاشده (هدر X-NexShop-Signature) به این آدرس ارسال می‌شود. ایمیل مشتری ارسال نمی‌شود."
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "راز امضای وب‌هوک"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "برای تأیید اصالت درخواست در سمت گیرنده (HMAC-SHA256 روی بدنهٔ درخواست)."
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "توکن API کاتالوگ"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "سئو و آنالیتیکس"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "کد تأیید"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "برای مدیران سایت بارگذاری نمی‌شود. با فیلتر nexshop_load_analytics می‌توانید به سیستم رضایت کاربر (Consent) متصل کنید."
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "ویجت چت (چت‌بات AI / پشتیبانی)"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "کد اسکریپت ویجت"
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "کد چت‌بات AI (مثل Tidio، Chatbase، Crisp) را اینجا بگذارید. فقط کد سرویس‌های مورد اعتماد را وارد کنید."
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "حساب شما اجازهٔ ذخیرهٔ اسکریپت ندارد (unfiltered_html)؛ تگ‌های script حذف می‌شوند."
+msgstr ""
+
+#: inc/admin-panel.php
+msgid "ذخیره تنظیمات"
+msgstr ""
+
+#: inc/gateways.php
+msgid "تومان ایران"
+msgstr ""
+
+#: inc/gateways.php
+msgid "ریال ایران"
+msgstr ""
+
+#: inc/gateways.php
+msgid "تومان"
+msgstr ""
+
+#: inc/gateways.php
+msgid "ریال"
+msgstr ""
+
+#: inc/gateways.php
+msgid "درگاه‌های پرداخت"
+msgstr ""
+
+#: inc/gateways.php
+msgid "💳 درگاه‌ها"
+msgstr ""
+
+#: inc/gateways.php
+msgid "این قالب با همه افزونه‌های درگاه استاندارد ووکامرس سازگار است. افزونه موردنظر را نصب و در <code>ووکامرس ← تنظیمات ← پرداخت</code> فعال کنید:"
+msgstr ""
+
+#: inc/gateways.php
+msgid "درگاه"
+msgstr ""
+
+#: inc/gateways.php
+msgid "منطقه"
+msgstr ""
+
+#: inc/gateways.php
+msgid "وب‌سایت"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه پیشنهادی"
+msgstr ""
+
+#: inc/gateways.php
+msgid "زرین‌پال"
+msgstr ""
+
+#: inc/gateways.php
+msgid "زیبال"
+msgstr ""
+
+#: inc/gateways.php
+msgid "پی‌پینگ"
+msgstr ""
+
+#: inc/gateways.php
+msgid "آیدی‌پی"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه ZarinPal for WooCommerce"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه Zibal for WooCommerce"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه PayPing for WooCommerce"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه IDPay for WooCommerce"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه WooCommerce Stripe Gateway (رسمی)"
+msgstr ""
+
+#: inc/gateways.php
+msgid "افزونه WooCommerce PayPal Payments (رسمی)"
+msgstr ""
+
+#: inc/integrations.php
+msgid "کاتالوگ API فعال نیست."
+msgstr ""
+
+#: inc/integrations.php
+msgid "توکن نامعتبر است."
+msgstr ""
+
+#: inc/integrations.php
+msgid "وب‌هوک نکس‌شاپ با موفقیت ارسال شد."
+msgstr ""
+
+#: inc/integrations.php
+msgid "ارسال وب‌هوک نکس‌شاپ ناموفق بود (کد %d)؛ تلاش مجدد زمان‌بندی شد."
+msgstr ""
+
+#: inc/integrations.php
+msgid "وب‌هوک نکس‌شاپ پس از ۳ تلاش ارسال نشد؛ بررسی کنید."
+msgstr ""
+
+#: inc/widgets.php
+msgid "ستون فروشگاه"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "محصولات نکس‌شاپ"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "تنظیمات محصولات"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "منبع محصولات"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "تازه‌ترین محصولات"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "پرفروش‌ترین‌ها"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "محصولات حراجی"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "محصولات ویژه"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "تعداد محصولات"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "تعداد ستون‌ها"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "کش خروجی (پیشنهاد می‌شود)"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-products-widget.php
+msgid "برای نمایش محصولات، ووکامرس را فعال کنید."
+msgstr ""
+
+#: elementor/widgets/class-nexshop-categories-widget.php
+msgid "دسته‌بندی‌های نکس‌شاپ"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-categories-widget.php
+msgid "تنظیمات دسته‌بندی‌ها"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-categories-widget.php
+msgid "تعداد دسته‌ها"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-categories-widget.php
+msgid "پنهان‌کردن دسته‌های خالی"
+msgstr ""
+
+#: elementor/widgets/class-nexshop-categories-widget.php
+msgid "برای نمایش دسته‌بندی‌ها، ووکامرس را فعال کنید."
+msgstr ""
+
+#: index.php
+msgid "نتیجه‌ای پیدا نشد."
+msgstr ""

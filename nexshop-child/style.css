@@ -1,0 +1,47 @@
+/*
+Theme Name: NexShop Child — نکس‌شاپ چایلد
+Theme URI: https://github.com/Mdjavad01/nexshop-wordpress-theme
+Description: چایلد تم رسمی قالب NexShop — برای سفارشی‌سازی امن بدون از دست رفتن تغییرات بعد از آپدیت قالب والد. تمام استایل‌ها و فونکشن‌های قالب والد به‌صورت خودکار بارگذاری می‌شوند.
+Author: NexTech
+Author URI: https://x.com/hellboy_code
+Template: nexshop
+Version: 2.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.0
+License: GNU General Public License v3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: nexshop-child
+*/
+
+/*
+ * ═══════ راهنمای سریع چایلد تم نکس‌شاپ ═══════
+ *
+ * قالب والد به‌صورت خودکار:
+ *   - assets/css/main.css  (با هندل nexshop-main)
+ *   - assets/js/main.js    و  assets/js/dark-mode.js
+ *   - تمام inc/* و ویجت‌های المنتور
+ * را بارگذاری می‌کند؛ نیازی به import دستی نیست.
+ *
+ * استایل‌های این فایل بعد از استایل والد بارگذاری می‌شوند
+ * (هندل nexshop-style به والد وابسته است)؛ یعنی همین‌جا بدون !important بازنویسی کنید.
+ *
+ * نمونه‌های سریع (کامنت‌ها را بردارید تا فعال شوند):
+ */
+
+/* نمونه: تغییر رنگ اکسنت در هر دو حالت دارک و لایت
+:root,
+:root[data-theme="light"] {
+  --nx-accent: #FF6B6B;
+  --nx-on-accent: #FFFFFF;
+}
+*/
+
+/* نمونه: گردتر کردن دکمه‌های اصلی
+.nx-btn { border-radius: 10px; }
+*/
+
+/* نمونه: افزودن فونت دلخواه
+@font-face { font-family: 'MyFont'; src: url('assets/fonts/MyFont.woff2') format('woff2'); }
+body { font-family: 'MyFont', 'Vazirmatn', Tahoma, sans-serif; }
+*/

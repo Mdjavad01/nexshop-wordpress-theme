@@ -1,4 +1,4 @@
-/* ══════════════ NexShop Main Styles ══════════════ */
+/* ══════════════ NexShop Main Styles — v2.0.0 ══════════════ */
 /* فونت وزیرمتن (متغیر) — خودمیزبان، مجوز OFL (assets/fonts/OFL.txt) */
 @font-face {
   font-family: 'Vazirmatn';
@@ -8,15 +8,50 @@
   font-display: swap;
 }
 
-:root {
-  --nx-accent: #C8F169;
+/* ═══════ توکن‌های طراحی — دارک (پیش‌فرض) ═══════ */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --nx-accent: #C8F169;          /* رنگ اکسنت (قابل تغییر از سفارشی‌ساز) */
+  --nx-on-accent: #0A0A0B;       /* رنگ متن روی اکسنت */
   --nx-bg: #0A0A0B;
   --nx-card: rgba(255,255,255,.04);
   --nx-border: rgba(255,255,255,.09);
   --nx-text: #EDEDEF;
+  --nx-content: #D4D4D8;
   --nx-muted: #A1A1AA;
+  --nx-faint: #52525B;
+  --nx-header-bg: rgba(10,10,11,.75);
+  --nx-header-bg-solid: rgba(10,10,11,.96);
+  --nx-nav-bg: #0F0F11;
+  --nx-grid-line: rgba(255,255,255,.03);
+  --nx-shadow: rgba(0,0,0,.45);
   --nx-radius: 18px;
 }
+
+/* ═══════ توکن‌های طراحی — لایت ═══════ */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --nx-accent: #7CB518;          /* نسخهٔ پررنگ‌تر اکسنت برای کنتراست روی زمینه روشن */
+  --nx-on-accent: #0A0A0B;
+  --nx-bg: #F7F7F8;
+  --nx-card: rgba(10,10,11,.045);
+  --nx-border: rgba(10,10,11,.10);
+  --nx-text: #18181B;
+  --nx-content: #27272A;
+  --nx-muted: #52525B;
+  --nx-faint: #A1A1AA;
+  --nx-header-bg: rgba(247,247,248,.78);
+  --nx-header-bg-solid: rgba(247,247,248,.97);
+  --nx-nav-bg: #FFFFFF;
+  --nx-grid-line: rgba(10,10,11,.045);
+  --nx-shadow: rgba(0,0,0,.12);
+  --nx-radius: 18px;
+}
+
+/* اگر JS اجرا نشده باشد، اسکریپت بوت data-theme را ست می‌کند؛
+   برای مرورگرهای بدون JS هم دارک (طراحی پیش‌فرض) اعمال است. */
+
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--nx-bg); color: var(--nx-text);
@@ -32,14 +67,14 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 /* ── هدر ── */
 .nx-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(10,10,11,.96);
+  background: var(--nx-header-bg-solid);
   border-bottom: 1px solid var(--nx-border);
   transition: box-shadow .3s;
 }
 @media (min-width: 861px) {
-  .nx-header { backdrop-filter: blur(16px); background: rgba(10,10,11,.75); }
+  .nx-header { backdrop-filter: blur(16px); background: var(--nx-header-bg); }
 }
-.nx-header.is-scrolled { box-shadow: 0 8px 30px rgba(0,0,0,.45); }
+.nx-header.is-scrolled { box-shadow: 0 8px 30px var(--nx-shadow); }
 .nx-header__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 20px; }
 .nx-logo-text { font-weight: 900; font-size: 1.35rem; }
 .nx-menu { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: .95rem; color: var(--nx-muted); }
@@ -47,22 +82,32 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 .nx-icon-btn {
   position: relative; background: var(--nx-card); border: 1px solid var(--nx-border);
   border-radius: 12px; padding: 8px 12px; cursor: pointer; color: var(--nx-text); font-size: 1rem;
+  transition: border-color .25s, transform .25s;
 }
+.nx-icon-btn:hover { border-color: var(--nx-accent); }
 .nx-cart-count {
-  position: absolute; top: -6px; left: -6px; background: var(--nx-accent); color: #000;
+  position: absolute; top: -6px; left: -6px; background: var(--nx-accent); color: var(--nx-on-accent);
   font-size: .7rem; font-weight: 800; border-radius: 999px; padding: 1px 7px;
 }
 .nx-burger { display: none; }
+
+/* ── دکمهٔ دارک/لایت ── */
+.nx-theme-toggle { line-height: 1; min-width: 40px; text-align: center; }
+.nx-theme-toggle .nx-icon-sun { display: inline; }   /* در دارک: خورشید = سوییچ به لایت */
+.nx-theme-toggle .nx-icon-moon { display: none; }
+:root[data-theme="light"] .nx-theme-toggle .nx-icon-sun { display: none; }
+:root[data-theme="light"] .nx-theme-toggle .nx-icon-moon { display: inline; }
 
 /* ── هیرو ── */
 .nx-hero { padding: 110px 0 80px; position: relative; overflow: hidden; }
 .nx-hero::before {
   content: ''; position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-image: linear-gradient(var(--nx-grid-line) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--nx-grid-line) 1px, transparent 1px);
   background-size: 56px 56px; pointer-events: none;
 }
 .nx-hero__inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center; position: relative; }
+.nx-hero__img { width: 100%; height: auto; }
 .nx-chip {
   display: inline-block; padding: 5px 16px; border: 1px solid var(--nx-border);
   border-radius: 999px; font-size: .8rem; color: var(--nx-muted); margin-bottom: 22px;
@@ -80,8 +125,8 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
   display: inline-block; padding: 14px 30px; border-radius: 999px; font-weight: 700;
   transition: transform .25s, opacity .25s, border-color .25s; border: none; cursor: pointer; font-family: inherit;
 }
-.nx-btn--primary { background: var(--nx-accent); color: #0A0A0B; }
-.nx-btn--primary:hover { transform: translateY(-3px) scale(1.02); color: #0A0A0B; }
+.nx-btn--primary { background: var(--nx-accent); color: var(--nx-on-accent); }
+.nx-btn--primary:hover { transform: translateY(-3px) scale(1.02); color: var(--nx-on-accent); }
 .nx-btn--ghost { border: 1px solid var(--nx-border); color: var(--nx-text); }
 .nx-btn--ghost:hover { border-color: var(--nx-accent); }
 
@@ -106,7 +151,9 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 .nx-feature h3 { margin: 0 0 6px; }
 .nx-feature p { color: var(--nx-muted); font-size: .9rem; margin: 0; }
 
-/* ── ووکامرس ── */
+/* ── ووکامرس ──
+   دکمه‌های ووکامرس با سلکتورهای هم‌ارز استایل هستهٔ WC بازنویسی می‌شوند
+   (بدون !important) — استایل قالب بعد از استایل افزونه بارگذاری می‌شود. */
 .nx-wc { padding-block: 60px; }
 .woocommerce ul.products li.product {
   background: var(--nx-card); border: 1px solid var(--nx-border); border-radius: var(--nx-radius);
@@ -114,18 +161,52 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 }
 .woocommerce ul.products li.product:hover { transform: translateY(-5px); border-color: var(--nx-accent); }
 .woocommerce ul.products li.product .button,
-.woocommerce a.button, .woocommerce button.button, #place_order {
-  background: var(--nx-accent) !important; color: #0A0A0B !important; border-radius: 999px !important;
-  font-weight: 700 !important;
+.woocommerce ul.products li.product .button:hover,
+.woocommerce a.button,
+.woocommerce a.button:hover,
+.woocommerce a.button.alt,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button,
+.woocommerce button.button:hover,
+.woocommerce button.button.alt,
+.woocommerce button.button.alt:hover,
+.woocommerce #respond input#submit,
+.woocommerce #respond input#submit:hover,
+.woocommerce div.product form.cart .button,
+.woocommerce div.product form.cart .button:hover,
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order,
+.woocommerce #payment #place_order:hover,
+.woocommerce-page #payment #place_order:hover {
+  background: var(--nx-accent); color: var(--nx-on-accent); border-radius: 999px;
+  font-weight: 700; font-family: inherit; text-shadow: none;
+}
+.woocommerce a.button:disabled,
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled] {
+  background: var(--nx-faint); color: var(--nx-bg); border-radius: 999px; font-family: inherit;
 }
 .woocommerce span.onsale { background: #ff5470; border-radius: 999px; }
-.woocommerce div.product .price, .woocommerce ul.products li.product .price { color: var(--nx-accent); font-weight: 800; }
+.woocommerce div.product .price,
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .price ins { color: var(--nx-accent); font-weight: 800; text-decoration: none; }
+.woocommerce ul.products li.product .price del { color: var(--nx-faint); font-weight: 400; }
+
+/* ── فرم‌های ووکامرس در دارک/لایت ── */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select,
+.select2-container--default .select2-selection--single {
+  background: var(--nx-card); border-color: var(--nx-border); color: var(--nx-text); border-radius: 10px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered { color: var(--nx-text); }
+.select2-dropdown { background: var(--nx-nav-bg); border-color: var(--nx-border); }
 
 /* ── صفحه تکی / جستجو ── */
 .nx-single { padding-block: 60px; max-width: 860px; }
 .nx-single__title { font-size: 2.2rem; font-weight: 900; }
 .nx-single__img { margin-bottom: 24px; }
-.nx-single__content { color: #D4D4D8; }
+.nx-single__content { color: var(--nx-content); }
 .nx-search { display: flex; gap: 10px; margin: 20px 0; }
 .nx-search input {
   flex: 1; background: var(--nx-card); border: 1px solid var(--nx-border);
@@ -143,7 +224,7 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 .nx-footer h4 { margin: 0 0 14px; }
 .nx-footer-menu { list-style: none; padding: 0; margin: 0; }
 .nx-footer-menu li { margin-bottom: 8px; }
-.nx-footer__copy { text-align: center; color: #52525B; font-size: .8rem; padding: 20px; border-top: 1px solid var(--nx-border); }
+.nx-footer__copy { text-align: center; color: var(--nx-faint); font-size: .8rem; padding: 20px; border-top: 1px solid var(--nx-border); }
 
 /* ── دکمه بازگشت به بالا ── */
 .nx-totop {
@@ -158,27 +239,46 @@ img { max-width: 100%; height: auto; border-radius: var(--nx-radius); }
 /* ── انیمیشن ورود ── */
 .nx-js .nx-reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
 .nx-js .nx-reveal.nx-on { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .nx-js .nx-reveal { opacity: 1; transform: none; transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .nx-js .nx-reveal { opacity: 1; transform: none; transition: none; }
+  html.nx-theme-switched * { transition: none !important; }
+}
 
 /* ── ریسپانسیو ── */
 @media (max-width: 860px) {
   .nx-hero__inner { grid-template-columns: 1fr; gap: 36px; }
   .nx-nav {
     display: none; position: absolute; top: 68px; right: 0; left: 0;
-    background: #0F0F11; border-bottom: 1px solid var(--nx-border); padding: 20px 24px;
+    background: var(--nx-nav-bg); border-bottom: 1px solid var(--nx-border); padding: 20px 24px;
   }
   .nx-nav.is-open { display: block; }
   .nx-menu { flex-direction: column; gap: 16px; }
   .nx-burger { display: block; }
 }
 
-/* ── سازگاری با المنتور ── */
+/* ═══════ سازگاری کامل با المنتور ═══════ */
 body.nx-elementor .nx-main,
 .nx-elementor-page { padding: 0; max-width: none; width: 100%; }
 .nx-elementor-page img { border-radius: 0; }
 .elementor img { border-radius: 0; }
 .elementor a { transition: color .25s; }
+
+/* وقتی هدر/فوتر المنتوری وجود دارد، هدر/فوتر قالب مخفی می‌شوند */
 .elementor-location-header .nx-header,
 .elementor-location-footer .nx-footer { display: none; }
 body.elementor-default .nx-main,
 body.elementor-page .nx-main { overflow-x: clip; }
+
+/* پل رنگی: ویجت‌های المنتور بدون رنگِ دستی، از توکن‌های تم پیروی می‌کنند
+   (رنگ‌های دستی/گلوبال کیت المنتور اولویت دارند و بازنویسی نمی‌شوند) */
+.elementor-section,
+.elementor-widget:not(.elementor-widget-button):not(.elementor-widget-icon-list) { color: var(--nx-text); }
+.elementor-widget-text-editor { color: var(--nx-content); }
+.elementor-widget-theme-site-title-widget a,
+.elementor-heading-title a { color: inherit; }
+
+/* وقتی دارک است، پس‌زمینهٔ پیش‌فرض سکشن‌های المنتورِ شفاف از تم می‌آید */
+.elementor-section.elementor-section-boxed > .elementor-container { max-width: 1200px; }
+
+/* ابزارک‌های نکس‌شاپ در المنتور */
+.nx-el-empty { color: var(--nx-muted); font-style: italic; }
